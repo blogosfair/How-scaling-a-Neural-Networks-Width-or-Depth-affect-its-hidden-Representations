@@ -745,7 +745,7 @@ emerged, blocks do not seem to change much anymore. Again, this is different to 
 position and especially the size of the block structures kept changing.
 
 Finally, it still seems that the residual connections do play a role for the emergence, and especially nature of block structures.
-More on this in [Conclusion & Discussion](#conclusion--discussion).
+More on this can be read in our discussion.
 
 ## Collapsing the block structure
 

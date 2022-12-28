@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: How scaling a neural networks width or depth affect its hidden representations
-description: [Your blog's abstract - a short description of what your blog is about]
+description: todo....
 date: 2022-12-01
 htmlwidgets: true
 

@@ -34,7 +34,7 @@ toc:
   - name: Introduction
   - name: Centered kernel alignment
   - name: Block structure
-  subsections:
+    subsections:
       - name: What happens within block structures?
       - name: Are block structures useful?
       - name: Collapsing the block structure

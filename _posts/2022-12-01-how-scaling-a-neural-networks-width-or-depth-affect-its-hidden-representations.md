@@ -55,7 +55,7 @@ This lack of insight is tackled in the paper
 <span>&nbsp;&nbsp;&nbsp;&#9654;&nbsp;&nbsp;</span>Thao Nguyen et al. (ICLR, 2021) Do Wide and Deep Networks Learn the Same Things? Uncovering How Neural Network Representations Vary with Width and Depth <d-cite key="DBLP:conf/iclr/NguyenRK21"></d-cite>.
 <p></p>
 
-First, representation similarity is analysed between different layers of a single model. It is found that in overparameterized
+First, representation similarity is analyzed between different layers of a single model. It is found that in overparameterized
 models, so called <em>block structures</em> arise, which refer to groups of contiguous layers which have very similar hidden representations.
 These block structures emerge, independent of whether a models width or depth is increased.\
 Furthermore, it is shown that key components
@@ -131,25 +131,8 @@ high representation similarity arise. With the capacity of the models increasing
 One can see the phenomenon emerge in the graphic below:
 
 
-<div id="images">
-<img class="slide_pics" src="/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/deep_1.png" id="fig_1_deep" width="25%" height="25%">
-<img class="slide_pics" src="/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/wide_1.png" id="fig_1_wide" width="25%" height="25%">
-
-</div>
-
-<div id="images">
-
-  <div class="bar">
-    <span class="slider_anno">Shallow</span>
-    <input type="range" min="1" max="5" value="1" class="slider" id="slider_deep">
-    <span class="slider_anno">Deep</span>
-  </div>
-
-  <div class="bar">
-      <span class="slider_anno">Narrow</span>
-      <input type="range" min="1" max="5" value="1" class="slider_small" id="slider_wide">
-      <span class="slider_anno">Wide</span>
-  </div>
+<div class="l-page">
+  <iframe src="{{ 'assets/html/22022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/slider1.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%"></iframe>
 </div>
 
 <p align = "center" style="margin-top:20px">
@@ -158,128 +141,7 @@ Figure 1: The block structures emerge when increasing the models depth (left) or
 </em>
 </p>
 
-<style>
-.slide_pics {
-    display: inline-block;
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
 
-.slider_anno {
-    font-size: 84%;
-    font-family: Arial;
-    color: black;
-}
-
-.bar {
-    display: inline-block;
-    margin-left: 32px;
-    margin-right: 60px;
-    margin-top: 0px;
-}
-
-
-#images{
-    text-align:center;
-}
-
-
-.slider_small {
-  -webkit-appearance: none;
-  margin: 0 10px;
-  width: 50%;
-  height: 8px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider_small::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #04AA6D;
-  cursor: pointer;
-}
-
-.slider_small::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #5f079a;
-  cursor: pointer;
-}
-</style>
-
-<script>
-//////////////////////////////////////////////////////////////////////// fig 1 deep
-var slider_deep = document.getElementById("slider_deep");
-var fig_1_deep = document.getElementById("fig_1_deep");
-
-// output.innerHTML = slider_deep.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider_deep.oninput = function() {
-if (slider_deep.value == 1) {
-  fig_1_deep.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/deep_1.png"
-}
-
-if (slider_deep.value == 2) {
-  fig_1_deep.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/deep_2.png"
-}
-
-if (slider_deep.value == 3) {
-  fig_1_deep.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/deep_3.png"
-}
-
-if (slider_deep.value == 4) {
-  fig_1_deep.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/deep_4.png"
-}
-
-if (slider_deep.value == 5) {
-  fig_1_deep.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/deep_5.png"
-}
-
-}
-
-//////////////////////////////////////////////////////////////////////// fig 1 wide
-var slider_wide = document.getElementById("slider_wide");
-var fig_1_wide = document.getElementById("fig_1_wide");
-
-// output.innerHTML = slider_wide.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider_wide.oninput = function() {
-if (slider_wide.value == 1) {
-  fig_1_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/wide_1.png"
-}
-
-if (slider_wide.value == 2) {
-  fig_1_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/wide_2.png"
-}
-
-if (slider_wide.value == 3) {
-  fig_1_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/wide_3.png"
-}
-
-if (slider_wide.value == 4) {
-  fig_1_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/wide_4.png"
-}
-
-if (slider_wide.value == 5) {
-  fig_1_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1/wide_5.png"
-}
-
-}
-
-</script>
 
 A block of contiguous layers, with CKA scores close to one, is termed <em>block structure</em>. It is visible that block structures
 arise independently of whether the models with or depth are increased.

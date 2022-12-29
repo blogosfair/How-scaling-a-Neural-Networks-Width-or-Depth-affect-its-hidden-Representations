@@ -25,7 +25,7 @@ authors:
 #       name: IAS, Princeton 
 
 # must be the exact same name as your blogpost
-bibliography: 2022-12-01-how-much-meta-learning-is-in-image-to-image-translation.bib  
+bibliography: 2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations.bib  
 
 # Add a table of contents to your post.
 #   - make sure that TOC names match the actual section names
@@ -467,7 +467,7 @@ It can be seen, that when reducing the data step by step, the blocks structures 
 for both deep and wide models. Therefore, it is concluded, that the emergence of the block structure seems to be an artifact
 of overparameterized models.
 
-## What happens within block structures?
+### What happens within block structures?
 
 After gaining knowledge about the block structure, the consequent follow-up question is, what happens to the representations within
 the block structure. Revisiting how the CKA score was computed, note the two-step procedure that was used: First, representation similarity
@@ -597,7 +597,7 @@ component across its constituent layers." <d-cite key="DBLP:conf/iclr/NguyenRK21
 Furthermore, all effects seem to be similar for the left and the right side, disregarding whether the models overparameterizations
 come from increased width or depth.
 
-## Are block structures useful?
+### Are block structures useful?
 
 While representations stay relatively similar in their relations to each other, when being propagated through the block structure,
 one could still ask whether transformations applied within block structures impact task performance.\
@@ -747,7 +747,7 @@ position and especially the size of the block structures kept changing.
 Finally, it still seems that the residual connections do play a role for the emergence, and especially nature of block structures.
 More on this can be read in our discussion.
 
-## Collapsing the block structure
+### Collapsing the block structure
 
 We've seen that the block structure arises in overparameterized models, and also that it preserves and propagates key
 components of the representations. Also, we've seen that the amount of task relevant information in the representations

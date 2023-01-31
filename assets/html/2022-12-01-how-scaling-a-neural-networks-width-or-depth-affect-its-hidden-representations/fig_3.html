@@ -1,0 +1,68 @@
+<html>
+<head>
+
+<style>
+.images{
+    text-align:center;
+}
+.fig_3 {
+    width : auto;
+    height: 530px; /*to preserve the aspect ratio of the image*/
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 0px;
+}
+
+
+
+.button_f3 {
+    border: 2px solid black;
+    font-size: 14px;
+    background-color: #5f079a;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    width:130px;
+    margin-bottom:20px;
+    margin-top:0px;
+    }
+
+</style>
+
+
+<script>
+var fig_3 = document.getElementById("fig_3");
+var btn2 = document.getElementById("fig_3btn");
+var blocks = 1;
+
+function changeBlockNoBlock() {
+  if (blocks == 1){
+    blocks = 2;
+    btn2.firstChild.data = "Blocks";
+    fig_3.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_3/no_blocks.png";
+    }
+  else if (blocks == 2){
+    blocks = 1;
+    btn2.firstChild.data = "No blocks";
+    fig_3.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_3/blocks.png";
+    }
+  }
+</script>
+
+</head>
+<body>
+
+<div id="images">
+  <img class="fig_3" src="../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_3/blocks.png" id="fig_3">
+
+   <button onclick="changeBlockNoBlock()" type="button" class="button_f3" id="fig_3btn">No blocks</button>
+</div>
+
+</body>
+</html>

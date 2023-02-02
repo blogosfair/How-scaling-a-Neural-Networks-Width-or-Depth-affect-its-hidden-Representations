@@ -1,7 +1,4 @@
----
-permalink: /robots.txt
----
 User-agent: *
 Disallow:
 
-Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml
+Sitemap: https://blogosfair.github.io/How-scaling-a-Neural-Networks-Width-or-Depth-affect-its-hidden-Representations//sitemap.xml

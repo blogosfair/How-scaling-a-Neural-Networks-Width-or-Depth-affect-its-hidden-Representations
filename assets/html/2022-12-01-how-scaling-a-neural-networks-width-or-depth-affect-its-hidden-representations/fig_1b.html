@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+.fig_1b {
+    width : auto;
+    height: 280px; /*to preserve the aspect ratio of the image*/
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.bar_centered_1b{
+  text-align:center;
+  margin-bottom: 15px;
+
+}
+.slider_1b {
+  -webkit-appearance: none;
+  margin: 0 10px;
+  height: 8px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+
+
+}
+
+.slider_1b::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider_1b::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #5f079a;
+  cursor: pointer;
+}
+
+</style>
+
+<script>
+
+var slider_1b = document.getElementById("slider_fig_1b");
+var fig_1b = document.getElementById("fig_1b");
+
+// output.innerHTML = slider_1b.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider_1b.oninput = function() {
+if (slider_1b.value == 1) {
+  fig_1b.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_1b/cnn1.png";
+}
+
+if (slider_1b.value == 2) {
+  fig_1b.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_1b/cnn2.png";
+}
+
+if (slider_1b.value == 3) {
+  fig_1b.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_1b/cnn4.png";
+}
+
+if (slider_1b.value == 4) {
+  fig_1b.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_1b/cnn8.png";
+}
+
+if (slider_1b.value == 5) {
+  fig_1b.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_1b/cnn10.png";
+}
+
+}
+</script>
+</head>
+<body>
+
+<div id="images">
+  <img class="fig_1b" src="../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_1b/cnn1.png" id="fig_1b">
+</div>
+
+<div class="bar_centered_1b">
+    <span class="slider_anno">Shallow</span>
+      <input type="range" min="1" max="5" value="1" id="slider_fig_1b" class="slider_1b">
+    <span class="slider_anno">Wide</span>
+</div>
+</body>
+</html>

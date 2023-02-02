@@ -1,7 +1,8 @@
 ---
 layout: distill
 title: How scaling a neural networks width or depth affect its hidden representations
-description: todo....
+description: [This blog post provides an interactive journey through a representation analysis in deep and wide 
+neural networks.]
 date: 2022-12-01
 htmlwidgets: true
 
@@ -132,7 +133,7 @@ One can see the phenomenon emerge in the graphic below:
 
 
 <div class="l-page">
-  <iframe src="{{ 'assets/html/22022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/slider1.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%"></iframe>
+  <iframe src="{{ 'assets/html/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/slider1.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%"></iframe>
 </div>
 
 <p align = "center" style="margin-top:20px">
@@ -150,19 +151,9 @@ Next, it is investigated whether the block structures emerge with regard to abso
 model size relative to the data. Nguyen et al. <d-cite key="DBLP:conf/iclr/NguyenRK21"></d-cite> proceed by training models, with gradually reduced training data,
 while keeping the other model parameters static. The results can be explored below:
 
-<div id="images">
-    <img class="fig_2" src="/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/deep_1.png" id="fig_2_wide">
-</div>
 
-<div class="bar_centered">
-    <span class="slider_anno">More data</span>
-    <input type="range" min="1" max="3" value="1" class="slider" id="slider_fig2">
-    <span class="slider_anno">Less data</span>
-
-  <div id="button_fig2">
-      <button onclick="changeDeepWide()" type="button" class="button" id="fig_2btn">Wide</button>
-  </div>
-
+<div class="l-page">
+  <iframe src="{{ 'assets/html/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%"></iframe>
 </div>
 
 <p align = "center" style="margin-top:20px">
@@ -171,159 +162,6 @@ Figure 2: Reducing the training data leads to block structures emerging in model
 </em>
 </p>
 
-<style>
-.button_fig2 {
-    text-align:center;
-
-}
-
-.button {
-    border: 2px solid black;
-    font-size: 14px;
-    background-color: #5f079a;
-    border: none;
-    color: white;
-    padding: 12px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    width:80px;
-    margin-bottom:20px;
-}
-
-
-.fig_2 {
-    width : auto;
-    height: 310px; /*to preserve the aspect ratio of the image*/
-    display: inline-block;
-}
-
-.slider {
-  -webkit-appearance: none;
-  margin: 0 10px;
-  width: 50%;
-  height: 8px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #04AA6D;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #5f079a;
-  cursor: pointer;
-}
-
-.bar_centered {
-
-  text-align:center;
-  margin-top:0px;
-}
-
-.fig_2 {
-  margin-bottom:0px;
-}
-
-
-</style>
-
-<script>
-//////////////////////////////////////////////////////////////////////// fig 2 wide
-var wide = 2;
-var slider_fig2 = document.getElementById("slider_fig2");
-var fig_2_wide = document.getElementById("fig_2_wide");
-var btn = document.getElementById("fig_2btn");
-
-
-// output.innerHTML = slider_fig2.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider_fig2.oninput = function() {
-if (slider_fig2.value == 1 && wide ==1) {
-  fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/wide_1.png"
-}
-
-if (slider_fig2.value == 2 && wide ==1) {
-  fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/wide_14.png"
-}
-
-if (slider_fig2.value == 3 && wide ==1) {
-  fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/wide_116.png"
-}
-if (slider_fig2.value == 1 && wide ==2) {
-  fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/deep_1.png"
-}
-
-if (slider_fig2.value == 2 && wide ==2) {
-  fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/deep_14.png"
-}
-
-if (slider_fig2.value == 3 && wide ==2) {
-  fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/deep_116.png"
-}
-
-}
-
-
-function changeDeepWide() {
-  if (wide == 1 && slider_fig2.value == 1){
-    wide = 2;
-    btn.firstChild.data = "Wide";
-    fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/deep_1.png";
-    }
-
-  else if (wide == 1 && slider_fig2.value == 2){
-    wide = 2;
-    btn.firstChild.data = "Wide";
-    fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/deep_14.png";
-    }
-
-
-  else if (wide == 1 && slider_fig2.value == 3){
-    wide = 2;
-    btn.firstChild.data = "Wide";
-    fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/deep_116.png";
-    }
-
-  else if (wide == 2 && slider_fig2.value == 1){
-    wide = 1;
-    btn.firstChild.data = "Deep";
-    fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/wide_1.png";
-    }
-
-  else if (wide == 2 && slider_fig2.value == 2){
-    wide = 1;
-    btn.firstChild.data = "Deep";
-    fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/wide_14.png";
-    }
-
-  else if (wide == 2 && slider_fig2.value == 3){
-    wide = 1;
-    btn.firstChild.data = "Deep";
-    fig_2_wide.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_2/wide_116.png";
-    }
-
-}
-
-</script>
 
 It can be seen, that when reducing the data step by step, the blocks structures emerge in smaller models already,
 for both deep and wide models. Therefore, it is concluded, that the emergence of the block structure seems to be an artifact
@@ -369,10 +207,8 @@ is continuously close to 1, the first principal component is <em>preserved</em> 
 This theoretical finding is supported by analysing previously shown models with regard to the first principal component:
 
 
-<div id="images">
-  <img class="fig_3" src="/public/images/2022-08-09-wide_vs_deep_network_representations/fig_3/blocks.png" id="fig_3">
-
-   <button onclick="changeBlockNoBlock()" type="button" class="button_f3" id="fig_3btn">No blocks</button>
+<div class="l-page">
+  <iframe src="{{ 'assets/html/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_3.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%"></iframe>
 </div>
 
 <p align = "center" style="margin-top:20px">
@@ -385,59 +221,6 @@ variance explained in the representations by the first principal component of ea
 The bottom right shows the CKA heatmap for layers with the first principal component being deleted from the representation matrices.
 </em>
 </p>
-
-<style>
-.images{
-    text-align:center;
-}
-.fig_3 {
-    width : auto;
-    height: 530px; /*to preserve the aspect ratio of the image*/
-    display: inline-block;
-    margin-left: 15px;
-    margin-bottom: 0px;
-}
-
-
-
-.button_f3 {
-    border: 2px solid black;
-    font-size: 14px;
-    background-color: #5f079a;
-    border: none;
-    color: white;
-    padding: 12px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    width:130px;
-    margin-bottom:20px;
-    margin-top:0px;
-    }
-
-</style>
-
-<script>
-var fig_3 = document.getElementById("fig_3");
-var btn2 = document.getElementById("fig_3btn");
-var blocks = 1;
-
-function changeBlockNoBlock() {
-  if (blocks == 1){
-    blocks = 2;
-    btn2.firstChild.data = "Blocks";
-    fig_3.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_3/no_blocks.png";
-    }
-  else if (blocks == 2){
-    blocks = 1;
-    btn2.firstChild.data = "No blocks";
-    fig_3.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_3/blocks.png";
-    }
-  }
-</script>
 
 In the bottom left, we can see the fraction of variance explained in the representations by the first principal
 component, per layer. Looking at the models exhibiting a block structure, it is very visible that the fraction of variance
@@ -468,8 +251,8 @@ a linear classifier, that maps directly from layers hidden representations to in
 Linear probe accuracies can be seen below, for two models with block structure, and two without. Note that two models of
 the same architecture type can exhibit different CKA heatmaps, due to their different initializations.
 
-<div id="images">
-  <img class="fig_4" src="/public/images/2022-08-09-wide_vs_deep_network_representations/fig_4/probes.png" id="fig_4_probes">
+<div class="l-page">
+  <iframe src="{{ 'assets/html/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_4.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%"></iframe>
 </div>
 
 <p align = "center" style="margin-top:20px">
@@ -478,15 +261,6 @@ Figure 4: Top row: CKA heatmaps for models with different widths. Bottom row: Li
 green lines refer to the boundaries between ResNet stages.
 </em>
 </p>
-
-<style>
-
-  .fig_4 {
-    width : auto;
-    height: 350px; /*to preserve the aspect ratio of the image*/
-    display: inline-block;
-  }
-</style>
 
 For the models without block structures on the left, we can see the accuracy of the linear probes monotonically increasing,
 and with it the informativity of the hidden representations regarding the task at hand. For models exhibiting block structures on the right,
@@ -502,14 +276,8 @@ seem to even worsen the representations.
 For researching the dynamics between block structure emergence and residual connections, Nguyen et al. <d-cite key="DBLP:conf/iclr/NguyenRK21"></d-cite> trained plain
 convolutional neural networks, without residual connections with varying widths, and computed the corresponding CKA heatmaps:
 
-<div id="images">
-  <img class="fig_1b" src="/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1b/cnn1.png" id="fig_1b">
-</div>
-
-<div class="bar_centered_1b">
-    <span class="slider_anno">Shallow</span>
-      <input type="range" min="1" max="5" value="1" id="slider_fig_1b" class="slider_1b">
-    <span class="slider_anno">Wide</span>
+<div class="l-page">
+  <iframe src="{{ 'assets/html/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_1b.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%"></iframe>
 </div>
 
 <p align = "center" style="margin-top:20px">
@@ -517,85 +285,6 @@ convolutional neural networks, without residual connections with varying widths,
 Figure 5: Block structures emerge in a model without residual connections with increased width.
 </em>
 </p>
-
-<style>
-.fig_1b {
-    width : auto;
-    height: 280px; /*to preserve the aspect ratio of the image*/
-    display: inline-block;
-    margin-bottom: 0px;
-}
-
-.bar_centered_1b{
-  text-align:center;
-  margin-bottom: 15px;
-
-}
-.slider_1b {
-  -webkit-appearance: none;
-  margin: 0 10px;
-  height: 8px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-
-
-}
-
-.slider_1b::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #04AA6D;
-  cursor: pointer;
-}
-
-.slider_1b::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #5f079a;
-  cursor: pointer;
-}
-
-</style>
-
-<script>
-
-var slider_1b = document.getElementById("slider_fig_1b");
-var fig_1b = document.getElementById("fig_1b");
-
-// output.innerHTML = slider_1b.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider_1b.oninput = function() {
-if (slider_1b.value == 1) {
-  fig_1b.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1b/cnn1.png";
-}
-
-if (slider_1b.value == 2) {
-  fig_1b.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1b/cnn2.png";
-}
-
-if (slider_1b.value == 3) {
-  fig_1b.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1b/cnn4.png";
-}
-
-if (slider_1b.value == 4) {
-  fig_1b.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1b/cnn8.png";
-}
-
-if (slider_1b.value == 5) {
-  fig_1b.src = "/public/images/2022-08-09-wide_vs_deep_network_representations/fig_1b/cnn10.png";
-}
-
-}
-</script>
 
 As shown for different ResNets, one can see blocks arise with increased model capacity. Based on the above graphic,
 Nguyen et al. <d-cite key="DBLP:conf/iclr/NguyenRK21"></d-cite> conclude that the emergence of block structures does not seem to be affected by the residual connections.\
@@ -621,8 +310,8 @@ More precisely, ResNet blocks are deleted one-by-one, starting at
 the end of each ResNet stage. How this impacts the performance of models can be seen below, for two
 models that exhibit block structure, and two that do not:
 
-<div id="images">
-  <img class="fig_5" src="/public/images/2022-08-09-wide_vs_deep_network_representations/fig_5/delete_blocks.png" id="fig_5">
+<div class="l-page">
+  <iframe src="{{ 'assets/html/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_5.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%"></iframe>
 </div>
 
 <p align = "center" style="margin-top:20px">
@@ -632,14 +321,6 @@ Bottom row: Test accuracy after deleting blocks from the end of each ResNet stag
 while keeping the residual connections intact. The grey dashed line refers to the original models performance.
 </em>
 </p>
-
-<style>
-  .fig_5 {
-    width : auto;
-    height: 420px; /*to preserve the aspect ratio of the image*/
-    display: inline-block;
-  }
-</style>
 
 One can see that pruning blocks from the middle ResNet stage, and within a block structure, leads to only a small loss of
 overall performance. Furthermore, the size of the block structure seems to play a role: the performance loss in the second
@@ -673,8 +354,8 @@ different output predictions made by different model types, even though the aver
 The outputs are systematically different on class level, as well as on individual example level.
 Let's have a look at the graphics below, to see those findings in detail:
 
-<div id="images">
-  <img class="fig_6" src="/public/images/2022-08-09-wide_vs_deep_network_representations/fig_6/fig_6.png" id="fig_6">
+<div class="l-page">
+  <iframe src="{{ 'assets/html/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_6.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%"></iframe>
 </div>
 
 <p align = "center" style="margin-top:20px">
@@ -688,13 +369,7 @@ Group of ResNet-83s and ResNet-50 (x2.8).
 </em>
 </p>
 
-<style>
-  .fig_6 {
-    width : auto;
-    height: 500px; /*to preserve the aspect ratio of the image*/
-    display: inline-block;
-  }
-</style>
+
 
 On the left bottom side of the plot (<strong>b</strong>), we can see the average accuracy for individual examples, of two groups of 100 deep ResNets,
 on the CIFAR-10 test set. Note that both groups have statistically indistinguishable average accuracies on the whole dataset.

@@ -1,0 +1,179 @@
+<html>
+<head>
+
+<style>
+    .button_fig2 {
+        text-align:center;
+
+    }
+
+    .button {
+        border: 2px solid black;
+        font-size: 14px;
+        background-color: #5f079a;
+        border: none;
+        color: white;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        width:80px;
+        margin-bottom:20px;
+    }
+
+
+    .fig_2 {
+        width : auto;
+        height: 310px; /*to preserve the aspect ratio of the image*/
+        display: inline-block;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      margin: 0 10px;
+      width: 50%;
+      height: 8px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #04AA6D;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #5f079a;
+      cursor: pointer;
+    }
+
+    .bar_centered {
+
+      text-align:center;
+      margin-top:0px;
+    }
+
+    .fig_2 {
+      margin-bottom:0px;
+    }
+
+
+</style>
+
+
+    <script>
+    //////////////////////////////////////////////////////////////////////// fig 2 wide
+    var wide = 2;
+    var slider_fig2 = document.getElementById("slider_fig2");
+    var fig_2_wide = document.getElementById("fig_2_wide");
+    var btn = document.getElementById("fig_2btn");
+
+
+    // output.innerHTML = slider_fig2.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider_fig2.oninput = function() {
+    if (slider_fig2.value == 1 && wide ==1) {
+      fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/wide_1.png"
+    }
+
+    if (slider_fig2.value == 2 && wide ==1) {
+      fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/wide_14.png"
+    }
+
+    if (slider_fig2.value == 3 && wide ==1) {
+      fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/wide_116.png"
+    }
+    if (slider_fig2.value == 1 && wide ==2) {
+      fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/deep_1.png"
+    }
+
+    if (slider_fig2.value == 2 && wide ==2) {
+      fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/deep_14.png"
+    }
+
+    if (slider_fig2.value == 3 && wide ==2) {
+      fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/deep_116.png.png"
+    }
+
+    }
+
+
+    function changeDeepWide() {
+      if (wide == 1 && slider_fig2.value == 1){
+        wide = 2;
+        btn.firstChild.data = "Wide";
+        fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/deep_1.png";
+        }
+
+      else if (wide == 1 && slider_fig2.value == 2){
+        wide = 2;
+        btn.firstChild.data = "Wide";
+        fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/deep_14.png";
+        }
+
+
+      else if (wide == 1 && slider_fig2.value == 3){
+        wide = 2;
+        btn.firstChild.data = "Wide";
+        fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/deep_116.png";
+        }
+
+      else if (wide == 2 && slider_fig2.value == 1){
+        wide = 1;
+        btn.firstChild.data = "Deep";
+        fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/wide_1.png";
+        }
+
+      else if (wide == 2 && slider_fig2.value == 2){
+        wide = 1;
+        btn.firstChild.data = "Deep";
+        fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/wide_14.png";
+        }
+
+      else if (wide == 2 && slider_fig2.value == 3){
+        wide = 1;
+        btn.firstChild.data = "Deep";
+        fig_2_wide.src = "../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/wide_116.png";
+        }
+
+    }
+
+    </script>
+
+</head>
+<body>
+
+    <div id="images">
+        <img class="fig_2" src="../../img/2022-12-01-how-scaling-a-neural-networks-width-or-depth-affect-its-hidden-representations/fig_2/deep_1.png" id="fig_2_wide">
+    </div>
+
+    <div class="bar_centered">
+        <span class="slider_anno">More data</span>
+        <input type="range" min="1" max="3" value="1" class="slider" id="slider_fig2">
+        <span class="slider_anno">Less data</span>
+
+      <div id="button_fig2">
+          <button onclick="changeDeepWide()" type="button" class="button" id="fig_2btn">Wide</button>
+      </div>
+
+    </div>
+</body>
+
+
+</html>

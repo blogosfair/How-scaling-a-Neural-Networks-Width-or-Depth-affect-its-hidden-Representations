@@ -44,10 +44,10 @@ toc:
 ---
 
 ## Introduction
-When applying artificial neural networks, performance is usually optimized by varying the architecture depth and width.
-There is a lack of understanding, however, what effect scaling the models main parameters - depth and width - has on
+When applying artificial neural networks, performance can be optimized by varying the architecture depth and width.
+However, there is a lack of understanding of what effect scaling the models' main parameters - depth and width - has on
 the learned representations. Do deep models learn different hidden layer features
-than wide models? Also, are there systematical differences in outputs of deep and wide models?
+than wide models? Also, are there systematical differences in the outputs of deep and wide models?
 
 This lack of insight is tackled in the paper
 
@@ -56,19 +56,19 @@ This lack of insight is tackled in the paper
 <p></p>
 
 First, representation similarity is analyzed between different layers of a single model. It is found that in overparameterized
-models, so called <em>block structures</em> arise, which refer to groups of contiguous layers which have very similar hidden representations.
-These block structures emerge, independent of whether a models width or depth is increased.\
+models, so-called <em>block structures</em> arise, which refer to groups of contiguous layers which have very similar hidden representations.
+These block structures emerge independent of whether a model's width or depth is increased.\
 Furthermore, it is shown that key components
 of the representations are preserved and propagated during block structure layers. This opens various questions:
 
-- Are representations becoming more meaningful for the task at hand, when being propagated through the block structure?
+- Are representations becoming more meaningful for the task at hand when being propagated through the block structure?
 - Could block structure layers be pruned from the model without negatively affecting performance?
 - What role do the residual connections, present in the models used in the experiments, play for keeping representations similar during propagation through the block structure?
 
 Those questions are addressed by Nguyen et al. <d-cite key="DBLP:conf/iclr/NguyenRK21"></d-cite>, and their answers will be discussed and interactively visualized in the
-following blogpost.
+the following blogpost.
 
-In addition, the blogpost presents novel findings described the second part of Nguyen et al. <d-cite key="DBLP:conf/iclr/NguyenRK21"></d-cite>'s analysis, which deal with representation similarities between different models, as well as whether models of different architecture type (e.g. deep vs. wide) show systematical differences in output predictions, despite performing very similar overall.
+In addition, the blogpost presents novel findings described by the second part of Nguyen et al. <d-cite key="DBLP:conf/iclr/NguyenRK21"></d-cite>'s analysis, which deals with representation similarities between different models, as well as whether models of different architecture type (e.g. deep vs. wide) show systematical differences in output predictions, despite performing very similar overall.
 
 ## Centered kernel alignment
 Let's begin with having a look at methodology. It is not that easy to directly compare different layers representations,
